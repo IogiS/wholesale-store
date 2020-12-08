@@ -1,0 +1,15 @@
+C:\Users\manik\OneDrive\Documents\GitHub\wholesale-store\wholesale-store\wholesale-store\bin\Debug\wholesale-store.exe.config
+C:\Users\manik\OneDrive\Documents\GitHub\wholesale-store\wholesale-store\wholesale-store\bin\Debug\wholesale-store.exe
+C:\Users\manik\OneDrive\Documents\GitHub\wholesale-store\wholesale-store\wholesale-store\bin\Debug\wholesale-store.pdb
+C:\Users\manik\OneDrive\Documents\GitHub\wholesale-store\wholesale-store\wholesale-store\bin\Debug\EntityFramework.dll
+C:\Users\manik\OneDrive\Documents\GitHub\wholesale-store\wholesale-store\wholesale-store\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\manik\OneDrive\Documents\GitHub\wholesale-store\wholesale-store\wholesale-store\bin\Debug\EntityFramework.xml
+C:\Users\manik\OneDrive\Documents\GitHub\wholesale-store\wholesale-store\wholesale-store\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\manik\OneDrive\Documents\GitHub\wholesale-store\wholesale-store\wholesale-store\obj\Debug\wholesale-store.csprojAssemblyReference.cache
+C:\Users\manik\OneDrive\Documents\GitHub\wholesale-store\wholesale-store\wholesale-store\obj\Debug\wholesale_store.Main.resources
+C:\Users\manik\OneDrive\Documents\GitHub\wholesale-store\wholesale-store\wholesale-store\obj\Debug\wholesale_store.Properties.Resources.resources
+C:\Users\manik\OneDrive\Documents\GitHub\wholesale-store\wholesale-store\wholesale-store\obj\Debug\wholesale-store.csproj.GenerateResource.cache
+C:\Users\manik\OneDrive\Documents\GitHub\wholesale-store\wholesale-store\wholesale-store\obj\Debug\wholesale-store.csproj.CoreCompileInputs.cache
+C:\Users\manik\OneDrive\Documents\GitHub\wholesale-store\wholesale-store\wholesale-store\obj\Debug\wholesale-store.csproj.CopyComplete
+C:\Users\manik\OneDrive\Documents\GitHub\wholesale-store\wholesale-store\wholesale-store\obj\Debug\wholesale-store.exe
+C:\Users\manik\OneDrive\Documents\GitHub\wholesale-store\wholesale-store\wholesale-store\obj\Debug\wholesale-store.pdb
