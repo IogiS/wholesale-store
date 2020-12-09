@@ -10,10 +10,16 @@
 namespace wholesale_store
 {
     using System;
+    using System.Collections.Generic;
     
-    public partial class sp_helpdiagramdefinition_Result
+    public partial class Customers
     {
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public int id_customer { get; set; }
+        public string customer_name { get; set; }
+        public string customer_address { get; set; }
+        public string cutomer_age { get; set; }
+        public int id_product { get; set; }
+    
+        public virtual Products Products { get; set; }
     }
 }

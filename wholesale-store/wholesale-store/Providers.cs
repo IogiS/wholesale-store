@@ -12,20 +12,19 @@ namespace wholesale_store
     using System;
     using System.Collections.Generic;
     
-    public partial class Storage
+    public partial class Providers
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Storage()
+        public Providers()
         {
-            this.Products = new HashSet<Product>();
+            this.Products = new HashSet<Products>();
         }
     
-        public int id_storage { get; set; }
-        public string storage_type { get; set; }
-        public Nullable<int> count_products { get; set; }
-        public string name_product { get; set; }
+        public int id_provider { get; set; }
+        public string provider_name { get; set; }
+        public string provider_address { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<Products> Products { get; set; }
     }
 }

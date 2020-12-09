@@ -1,15 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="Хранилище Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="Customer">
-    <Key>
-      <PropertyRef Name="id_customer" />
-    </Key>
-    <Property Name="id_customer" Type="int" Nullable="false" />
-    <Property Name="customer_name" Type="nchar" MaxLength="10" />
-    <Property Name="customer_adress" Type="nchar" MaxLength="10" />
-    <Property Name="customer_age" Type="nchar" MaxLength="10" />
-    <Property Name="id_product" Type="int" Nullable="false" />
-  </EntityType>
   <EntityType Name="Customers">
     <Key>
       <PropertyRef Name="id_customer" />
@@ -18,7 +8,6 @@
     <Property Name="customer_name" Type="nchar" MaxLength="10" />
     <Property Name="customer_address" Type="nchar" MaxLength="10" />
     <Property Name="cutomer_age" Type="nchar" MaxLength="10" />
-    <Property Name="id_product" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Products">
     <Key>
@@ -49,40 +38,6 @@
     <Property Name="count_products" Type="int" Nullable="false" />
     <Property Name="name_product" Type="nchar" MaxLength="10" Nullable="false" />
   </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
-  </EntityType>
-  <Association Name="FK_Customer_Products">
-    <End Role="Products" Type="Self.Products" Multiplicity="1" />
-    <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Products">
-        <PropertyRef Name="id_product" />
-      </Principal>
-      <Dependent Role="Customer">
-        <PropertyRef Name="id_product" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Customers_Products">
-    <End Role="Products" Type="Self.Products" Multiplicity="1" />
-    <End Role="Customers" Type="Self.Customers" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Products">
-        <PropertyRef Name="id_product" />
-      </Principal>
-      <Dependent Role="Customers">
-        <PropertyRef Name="id_product" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Products_Providers">
     <End Role="Providers" Type="Self.Providers" Multiplicity="1" />
     <End Role="Products" Type="Self.Products" Multiplicity="*" />
@@ -108,20 +63,10 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="Хранилище ModelContainer">
-    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Providers" EntityType="Self.Providers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Storages" EntityType="Self.Storages" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK_Customer_Products" Association="Self.FK_Customer_Products">
-      <End Role="Products" EntitySet="Products" />
-      <End Role="Customer" EntitySet="Customer" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Customers_Products" Association="Self.FK_Customers_Products">
-      <End Role="Products" EntitySet="Products" />
-      <End Role="Customers" EntitySet="Customers" />
-    </AssociationSet>
     <AssociationSet Name="FK_Products_Providers" Association="Self.FK_Products_Providers">
       <End Role="Providers" EntitySet="Providers" />
       <End Role="Products" EntitySet="Products" />

@@ -12,17 +12,12 @@ namespace wholesale_store
     using System;
     using System.Collections.Generic;
     
-    public partial class Order
+    public partial class sysdiagrams
     {
-        public int id_order { get; set; }
-        public Nullable<int> id_customer { get; set; }
-        public Nullable<int> id_provider { get; set; }
-        public Nullable<int> id_product { get; set; }
-        public Nullable<int> count_unit { get; set; }
-        public Nullable<int> price { get; set; }
-    
-        public virtual Customer Customer { get; set; }
-        public virtual Provider Provider { get; set; }
-        public virtual Product Product { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

@@ -14,18 +14,12 @@ namespace wholesale_store
     
     public partial class Customer
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Customer()
-        {
-            this.Orders = new HashSet<Order>();
-        }
-    
         public int id_customer { get; set; }
         public string customer_name { get; set; }
-        public string customer_address { get; set; }
-        public string cutomer_age { get; set; }
+        public string customer_adress { get; set; }
+        public string customer_age { get; set; }
+        public int id_product { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order> Orders { get; set; }
+        public virtual Products Products { get; set; }
     }
 }

@@ -11,17 +11,21 @@ namespace wholesale_store
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class Product
+    using System.ComponentModel.DataAnnotations;
+
+    public partial class Products
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Product()
+        public Products()
         {
-            this.Orders = new HashSet<Order>();
+            this.Customer = new HashSet<Customer>();
+            this.Customers = new HashSet<Customers>();
         }
-    
+        [Key]
         public int id_product { get; set; }
+        [Required]
         public int id_provider { get; set; }
+        [Required]
         public int id_storage { get; set; }
         public string mark_product { get; set; }
         public string unit_product { get; set; }
@@ -29,8 +33,10 @@ namespace wholesale_store
         public string on_stock { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order> Orders { get; set; }
-        public virtual Provider Provider { get; set; }
-        public virtual Storage Storage { get; set; }
+        public virtual ICollection<Customer> Customer { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Customers> Customers { get; set; }
+        public virtual Providers Providers { get; set; }
+        public virtual Storages Storages { get; set; }
     }
 }
