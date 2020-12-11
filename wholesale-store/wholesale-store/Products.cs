@@ -11,8 +11,7 @@ namespace wholesale_store
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Products
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,11 +20,9 @@ namespace wholesale_store
             this.Customer = new HashSet<Customer>();
             this.Customers = new HashSet<Customers>();
         }
-        [Key]
+    
         public int id_product { get; set; }
-        [Required]
         public int id_provider { get; set; }
-        [Required]
         public int id_storage { get; set; }
         public string mark_product { get; set; }
         public string unit_product { get; set; }

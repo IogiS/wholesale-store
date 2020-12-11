@@ -69,6 +69,7 @@
     <Compile Include="EditProduct.cs" />
     <Compile Include="EditProvider.cs" />
     <Compile Include="EditStorage.cs" />
+    <Compile Include="Interface1.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>

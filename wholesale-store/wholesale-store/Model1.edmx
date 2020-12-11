@@ -4,15 +4,15 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище Model1" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Customer">
           <Key>
             <PropertyRef Name="id_customer" />
           </Key>
           <Property Name="id_customer" Type="int" Nullable="false" />
-          <Property Name="customer_name" Type="nchar" MaxLength="10" />
-          <Property Name="customer_adress" Type="nchar" MaxLength="10" />
-          <Property Name="customer_age" Type="nchar" MaxLength="10" />
+          <Property Name="customer_name" Type="nchar" MaxLength="1000" />
+          <Property Name="customer_adress" Type="nchar" MaxLength="1000" />
+          <Property Name="customer_age" Type="nchar" MaxLength="1000" />
           <Property Name="id_product" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Customers">
@@ -32,27 +32,27 @@
           <Property Name="id_product" Type="int" Nullable="false" />
           <Property Name="id_provider" Type="int" Nullable="false" />
           <Property Name="id_storage" Type="int" Nullable="false" />
-          <Property Name="mark_product" Type="nchar" MaxLength="10" Nullable="false" />
-          <Property Name="unit_product" Type="nchar" MaxLength="10" Nullable="false" />
-          <Property Name="price_product" Type="nchar" MaxLength="10" Nullable="false" />
-          <Property Name="on_stock" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="mark_product" Type="nchar" MaxLength="1000" Nullable="false" />
+          <Property Name="unit_product" Type="nchar" MaxLength="1000" Nullable="false" />
+          <Property Name="price_product" Type="nchar" MaxLength="1000" Nullable="false" />
+          <Property Name="on_stock" Type="nchar" MaxLength="1000" Nullable="false" />
         </EntityType>
         <EntityType Name="Providers">
           <Key>
             <PropertyRef Name="id_provider" />
           </Key>
           <Property Name="id_provider" Type="int" Nullable="false" />
-          <Property Name="provider_name" Type="nchar" MaxLength="10" />
-          <Property Name="provider_address" Type="nchar" MaxLength="10" />
+          <Property Name="provider_name" Type="nchar" MaxLength="1000" />
+          <Property Name="provider_address" Type="nchar" MaxLength="1000" />
         </EntityType>
         <EntityType Name="Storages">
           <Key>
             <PropertyRef Name="id_storage" />
           </Key>
           <Property Name="id_storage" Type="int" Nullable="false" />
-          <Property Name="storage_type" Type="nchar" MaxLength="10" Nullable="false" />
-          <Property Name="count_products" Type="int" Nullable="false" />
-          <Property Name="name_product" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="storage_type" Type="nchar" MaxLength="1000" Nullable="false" />
+          <Property Name="count_products" Type="int" />
+          <Property Name="name_product" Type="nchar" MaxLength="1000" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -112,7 +112,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Хранилище ModelContainer">
+        <EntityContainer Name="Хранилище Model1Container">
           <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
@@ -140,15 +140,15 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="Model1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Customer">
           <Key>
             <PropertyRef Name="id_customer" />
           </Key>
           <Property Name="id_customer" Type="Int32" Nullable="false" />
-          <Property Name="customer_name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="customer_adress" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="customer_age" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="customer_name" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" />
+          <Property Name="customer_adress" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" />
+          <Property Name="customer_age" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" />
           <Property Name="id_product" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Products" Relationship="Self.FK_Customer_Products" FromRole="Customer" ToRole="Products" />
         </EntityType>
@@ -170,10 +170,10 @@
           <Property Name="id_product" Type="Int32" Nullable="false" />
           <Property Name="id_provider" Type="Int32" Nullable="false" />
           <Property Name="id_storage" Type="Int32" Nullable="false" />
-          <Property Name="mark_product" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="unit_product" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="price_product" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="on_stock" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="mark_product" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="unit_product" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="price_product" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="on_stock" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Customer" Relationship="Self.FK_Customer_Products" FromRole="Products" ToRole="Customer" />
           <NavigationProperty Name="Customers" Relationship="Self.FK_Customers_Products" FromRole="Products" ToRole="Customers" />
           <NavigationProperty Name="Providers" Relationship="Self.FK_Products_Providers" FromRole="Products" ToRole="Providers" />
@@ -184,8 +184,8 @@
             <PropertyRef Name="id_provider" />
           </Key>
           <Property Name="id_provider" Type="Int32" Nullable="false" />
-          <Property Name="provider_name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="provider_address" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="provider_name" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" />
+          <Property Name="provider_address" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="Products" Relationship="Self.FK_Products_Providers" FromRole="Providers" ToRole="Products" />
         </EntityType>
         <EntityType Name="Storages">
@@ -193,9 +193,9 @@
             <PropertyRef Name="id_storage" />
           </Key>
           <Property Name="id_storage" Type="Int32" Nullable="false" />
-          <Property Name="storage_type" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="count_products" Type="Int32" Nullable="false" />
-          <Property Name="name_product" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="storage_type" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="count_products" Type="Int32" />
+          <Property Name="name_product" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="Products" Relationship="Self.FK_Products_Storages" FromRole="Storages" ToRole="Products" />
         </EntityType>
         <EntityType Name="sysdiagrams">
@@ -285,9 +285,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище ModelContainer" CdmEntityContainer="newStore">
+        <EntityContainerMapping StorageEntityContainer="Хранилище Model1Container" CdmEntityContainer="newStore">
           <EntitySetMapping Name="Customer">
-            <EntityTypeMapping TypeName="Model.Customer">
+            <EntityTypeMapping TypeName="Model1.Customer">
               <MappingFragment StoreEntitySet="Customer">
                 <ScalarProperty Name="id_customer" ColumnName="id_customer" />
                 <ScalarProperty Name="customer_name" ColumnName="customer_name" />
@@ -298,7 +298,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Customers">
-            <EntityTypeMapping TypeName="Model.Customers">
+            <EntityTypeMapping TypeName="Model1.Customers">
               <MappingFragment StoreEntitySet="Customers">
                 <ScalarProperty Name="id_customer" ColumnName="id_customer" />
                 <ScalarProperty Name="customer_name" ColumnName="customer_name" />
@@ -309,7 +309,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Products">
-            <EntityTypeMapping TypeName="Model.Products">
+            <EntityTypeMapping TypeName="Model1.Products">
               <MappingFragment StoreEntitySet="Products">
                 <ScalarProperty Name="id_product" ColumnName="id_product" />
                 <ScalarProperty Name="id_provider" ColumnName="id_provider" />
@@ -322,7 +322,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Providers">
-            <EntityTypeMapping TypeName="Model.Providers">
+            <EntityTypeMapping TypeName="Model1.Providers">
               <MappingFragment StoreEntitySet="Providers">
                 <ScalarProperty Name="id_provider" ColumnName="id_provider" />
                 <ScalarProperty Name="provider_name" ColumnName="provider_name" />
@@ -331,7 +331,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Storages">
-            <EntityTypeMapping TypeName="Model.Storages">
+            <EntityTypeMapping TypeName="Model1.Storages">
               <MappingFragment StoreEntitySet="Storages">
                 <ScalarProperty Name="id_storage" ColumnName="id_storage" />
                 <ScalarProperty Name="storage_type" ColumnName="storage_type" />
@@ -341,7 +341,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="Model.sysdiagrams">
+            <EntityTypeMapping TypeName="Model1.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />

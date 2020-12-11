@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,8 +35,8 @@ namespace wholesale_store
                 using (newStore lcw = new newStore())
                 {
                     Storages storages = new Storages { };
-                    storages.storage_type = storage_type_text.Text;
-                    storages.name_product = products_name_text.Text;
+                    storages.storage_type = storage_type_text.Text.Trim();
+                    storages.name_product = products_name_text.Text.Trim();
                     storages.count_products = int.Parse(counts_product_text.Text);
                     storages.id_storage = int.Parse(id_storage_text.Text);
                     lcw.Storages.Add(storages);
@@ -56,17 +57,24 @@ namespace wholesale_store
                 {
                     var b = lcw.Storages.Where(p => p.id_storage == id_product).FirstOrDefault();
 
-                    b.storage_type = storage_type_text.Text;
-                    b.name_product = products_name_text.Text;
+                    b.storage_type = storage_type_text.Text.Trim();
+                    b.name_product = products_name_text.Text.Trim();
                     b.count_products = int.Parse(counts_product_text.Text);
                     b.id_storage = int.Parse(id_storage_text.Text);
                     lcw.SaveChanges();
                 }
                 MessageBox.Show("Success", "Add result");
             }
-            catch (Exception ex)
+            catch (DbEntityValidationException dbEx)
             {
-                MessageBox.Show(ex.ToString());
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        string error = String.Format("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
+                        MessageBox.Show(error);
+                    }
+                }
             }
         }
 

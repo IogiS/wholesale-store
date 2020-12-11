@@ -22,7 +22,7 @@ namespace wholesale_store
     
         public int id_storage { get; set; }
         public string storage_type { get; set; }
-        public int count_products { get; set; }
+        public Nullable<int> count_products { get; set; }
         public string name_product { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -67,6 +67,7 @@ namespace wholesale_store
                     b.price_product = product_price_text.Text;
                     b.mark_product = mark_product_text.Text;
                     b.on_stock = on_storage_text.Text;
+                    b.id_storage = int.Parse(id_storage.Text);
                     lcw.SaveChanges();
                 }
                 MessageBox.Show("Success", "Add result");
@@ -101,7 +102,7 @@ namespace wholesale_store
             {
                 foreach (Products products in lcw.Products)
                 {
-                    productView.Rows.Add(products.id_product.ToString(), products.id_provider, products.id_storage, products.mark_product, products.unit_product, products.on_stock, products.price_product);
+                    productView.Rows.Add(products.id_product.ToString(), products.id_provider, products.id_storage, products.mark_product, products.unit_product, products.price_product, products.on_stock);
 
 
                 }

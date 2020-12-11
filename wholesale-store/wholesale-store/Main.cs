@@ -23,7 +23,7 @@ namespace wholesale_store
         {
             InitializeComponent();
             editProduct = new EditProduct(mark_product_text,product_unit_text,product_price_text,on_storage_text,id_provider_text,id_storage,id_product, productView);
-            editStorage = new EditStorage(storage_type_text,counts_product_text,products_name_text,id_storage_text, StorageView);
+            editStorage = new EditStorage(storage_type_text, id_storage_text, products_name_text, counts_product_text, StorageView);
             editProvider = new EditProvider(nameProvider,adress_provider_text,provider_id,providersView);
             editCustomer = new EditCustomer(id_customer_text,customer_name_text,customer_adress,customer_age_text,customersView);
             editCustomer.viewProducts();
